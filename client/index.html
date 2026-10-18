@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAN Collaborative Whiteboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <div>
+        <h1>Collaborative Whiteboard</h1>
+        <p>LAN Real-Time Drawing</p>
+    </div>
+    <div class="connection">
+        <span id="statusDot" class="status-dot offline"></span>
+        <span id="connectionStatus">Connecting...</span>
+    </div>
+</header>
+
+<section class="toolbar">
+    <div class="user-section">
+        <label>User:</label>
+        <input id="username" type="text" placeholder="Enter name" maxlength="20">
+    </div>
+
+    <div class="tool-section">
+        <button id="drawButton" class="tool active">✏️ Draw</button>
+        <button id="eraseButton" class="tool">🧹 Eraser</button>
+    </div>
+
+    <div class="color-section">
+        <label>Color:</label>
+        <input id="colorPicker" type="color" value="#111111">
+    </div>
+
+    <div class="size-section">
+        <label>Size:</label>
+        <input id="brushSize" type="range" min="1" max="20" value="4">
+        <span id="sizeValue">4</span>
+    </div>
+
+    <button id="clearButton" class="clear-button">Clear Canvas</button>
+</section>
+
+<main>
+    <canvas id="whiteboard"></canvas>
+</main>
+
+<footer>
+    <div><strong>Users Online:</strong> <span id="usersOnline">0</span></div>
+    <div id="messages">Connecting to server...</div>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
